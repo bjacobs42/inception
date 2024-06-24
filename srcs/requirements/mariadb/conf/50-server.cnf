@@ -1,0 +1,24 @@
+[mysqld]
+basedir					= /usr
+datadir					= /var/lib/mysql
+tmpdir					= /tmp
+                        
+user					= mysql
+port					= 3306
+bind_address			= 0.0.0.0
+                        
+max_allowed_packet		= 32M
+max_connect_errors		= 1000
+                        
+socket					= /var/run/mysqld/mysqld.sock
+pid-file				= /var/run/mysqld/mysqld.pid
+                        
+query_cache_size		= 32M
+query_cache_type		= ON
+query_cache_limit		= 1M
+
+log_error				= /var/log/mysql/error.log
+expire_logs_days		= 5
+                        
+character_set_server	= utf8mb4
+collation_server		= utf8mb4_general_ci
