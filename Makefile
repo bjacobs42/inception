@@ -49,4 +49,4 @@ $(REQ_DIRS):
 	@echo "$(YELLOW)Creating folder $@ $(NC)🗂"
 	@mkdir -p $@
 
-.PHONY: up stop down build status re
+.PHONY: up stop down build status fclean re
