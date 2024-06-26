@@ -1,11 +1,11 @@
 #!/bin/bash
 
+mkdir -p /run/php
+
 until mariadb -h mariadb -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE"; do
 	echo Waiting...
 	sleep 2;
 done 2>/dev/null
-
-rm -rf ./*
 
 if ! [ -f "./wp-config.php" ]; then
 	wp core download --allow-root
@@ -32,8 +32,6 @@ if ! [ -f "./wp-config.php" ]; then
 		--role=author						\
 		--user_pass=$WP_USER_PASSWORD		\
 		--allow-root
-
-	mkdir -p /run/php
 fi
 
 echo "Starting php!"
