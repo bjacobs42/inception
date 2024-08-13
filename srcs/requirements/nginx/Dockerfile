@@ -16,6 +16,4 @@ RUN openssl req -x509 -nodes -out $CERTIFICATE -keyout $CERTIFICATE_KEY -subj "/
 COPY ./conf/nginx.conf /etc/nginx/conf.d/nginx.conf
 COPY ./tools/script.sh /
 
-EXPOSE 433
-
 ENTRYPOINT ["/script.sh"]
